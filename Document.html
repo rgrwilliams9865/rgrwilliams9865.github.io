@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Roger Williams – Independent AI/ML Consultant specializing in Agentic AI, LLM integration, and multi-agent systems.">
+  <meta property="og:title" content="Roger Williams | AI/ML Consultant">
+  <meta property="og:description" content="Independent AI/ML Consultant specializing in Agentic AI, multi-agent orchestration, and LLM-powered systems.">
+  <meta property="og:type" content="website">
+  <title>Roger Williams | AI/ML Consultant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1a1a2e;
+      --accent: #0f7173;
+      --accent-light: #e0f2f1;
+      --text: #2c2c2c;
+      --text-light: #5a5a5a;
+      --bg: #fafafa;
+      --white: #ffffff;
+      --border: #e0e0e0;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(26, 26, 46, 0.95); backdrop-filter: blur(8px);
+      padding: 14px 0;
+    }
+    nav .nav-inner {
+      max-width: 960px; margin: 0 auto; padding: 0 20px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    nav .logo { color: var(--white); font-weight: 700; font-size: 1.1em; text-decoration: none; }
+    nav .nav-links { display: flex; gap: 24px; list-style: none; }
+    nav .nav-links a {
+      color: rgba(255,255,255,0.75); text-decoration: none; font-size: 0.88em;
+      font-weight: 500; transition: color 0.2s;
+    }
+    nav .nav-links a:hover { color: var(--white); }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #16213e 50%, var(--accent) 100%);
+      color: var(--white);
+      padding: 120px 20px 70px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 2.6em; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; }
+    .hero .tagline { font-size: 1.2em; font-weight: 300; opacity: 0.9; margin-bottom: 24px; }
+    .hero .contact-bar {
+      display: flex; justify-content: center; gap: 24px; flex-wrap: wrap;
+      font-size: 0.92em; opacity: 0.85;
+    }
+    .hero .contact-bar a { color: rgba(255,255,255,0.85); text-decoration: none; }
+    .hero .contact-bar a:hover { color: var(--white); text-decoration: underline; }
+    .hero .contact-bar span::before { content: " · "; opacity: 0.5; }
+    .hero .contact-bar span:first-child::before { content: ""; }
+    .hero .status-badge {
+      display: inline-block; margin-top: 24px;
+      background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+      padding: 8px 22px; border-radius: 24px; font-size: 0.9em; font-weight: 500;
+    }
+    .hero .status-badge .dot {
+      display: inline-block; width: 8px; height: 8px;
+      background: #4caf50; border-radius: 50%; margin-right: 8px;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+    .hero .cta-row { margin-top: 28px; display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block; background: var(--white); color: var(--primary);
+      padding: 12px 30px; border-radius: 28px; text-decoration: none;
+      font-weight: 600; font-size: 0.95em; transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary:hover { transform: scale(1.04); box-shadow: 0 4px 16px rgba(0,0,0,0.2); }
+    .btn-secondary {
+      display: inline-block; background: transparent; color: var(--white);
+      border: 1px solid rgba(255,255,255,0.4);
+      padding: 12px 30px; border-radius: 28px; text-decoration: none;
+      font-weight: 500; font-size: 0.95em; transition: background 0.2s;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+    /* CONTAINER */
+    .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+    /* SECTION */
+    section { padding: 64px 0; }
+    section h2 {
+      font-size: 1.6em; color: var(--primary); margin-bottom: 8px;
+      padding-bottom: 12px; border-bottom: 3px solid var(--accent);
+      display: inline-block;
+    }
+    section .section-subtitle {
+      color: var(--text-light); font-size: 1em; margin-bottom: 32px;
+    }
+
+    /* INTRO */
+    .intro-text {
+      font-size: 1.08em; line-height: 1.85; color: var(--text-light);
+      max-width: 800px; margin: 0 auto; text-align: center; padding: 48px 20px 0;
+    }
+
+    /* METRICS */
+    .metrics-row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px; margin-top: 32px; text-align: center;
+    }
+    .metric-box {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px;
+    }
+    .metric-box .number { font-size: 2.2em; font-weight: 700; color: var(--accent); }
+    .metric-box .label { font-size: 0.85em; color: var(--text-light); margin-top: 4px; }
+
+    /* SKILLS GRID */
+    .skills-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; margin-top: 32px;
+    }
+    .skill-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 28px; transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .skill-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); transform: translateY(-2px); }
+    .skill-card .icon { font-size: 2em; margin-bottom: 12px; }
+    .skill-card h3 { font-size: 1.1em; color: var(--primary); margin-bottom: 8px; }
+    .skill-card p { font-size: 0.9em; color: var(--text-light); line-height: 1.6; }
+
+    /* EXPERIENCE */
+    .experience-list { margin-top: 32px; }
+    .exp-item {
+      display: flex; gap: 20px; padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-logo {
+      flex-shrink: 0; width: 56px; height: 56px;
+      background: var(--accent-light); border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: 0.75em; color: var(--accent); text-align: center;
+    }
+    .exp-details h3 { font-size: 1.05em; color: var(--primary); }
+    .exp-details .company { font-size: 0.95em; color: var(--accent); font-weight: 600; }
+    .exp-details .dates { font-size: 0.85em; color: var(--text-light); margin-bottom: 6px; }
+    .exp-details p { font-size: 0.9em; color: var(--text-light); }
+
+    /* TECH STACK */
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+    .tech-tag {
+      background: var(--accent-light); color: var(--accent);
+      padding: 8px 16px; border-radius: 20px; font-size: 0.86em; font-weight: 500;
+    }
+
+    /* EDUCATION */
+    .edu-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; margin-top: 32px;
+    }
+    .edu-card {
+      background: var(--white); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px;
+    }
+    .edu-card h3 { color: var(--primary); font-size: 1.05em; }
+    .edu-card .school { color: var(--accent); font-weight: 600; font-size: 0.95em; }
+    .edu-card .year { color: var(--text-light); font-size: 0.85em; }
+    .edu-card p { color: var(--text-light); font-size: 0.88em; margin-top: 8px; }
+
+    /* CTA SECTION */
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: var(--white); text-align: center; padding: 64px 20px;
+    }
+    .cta-section h2 { color: var(--white); border-bottom-color: rgba(255,255,255,0.3); }
+    .cta-section p { opacity: 0.9; margin: 16px 0 28px; font-size: 1.05em; }
+
+    /* FOOTER */
+    footer {
+      text-align: center; padding: 28px 20px; font-size: 0.8em; color: var(--text-light);
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* MOBILE */
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.8em; }
+      .hero .tagline { font-size: 1em; }
+      .hero .contact-bar { flex-direction: column; gap: 8px; }
+      .hero .contact-bar span::before { content: ""; }
+      nav .nav-links { gap: 14px; }
+      nav .nav-links a { font-size: 0.8em; }
+      .exp-item { flex-direction: column; gap: 12px; }
+      .metrics-row { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="logo">RW</a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#tech">Tech Stack</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1>Roger Williams</h1>
+    <p class="tagline">Independent AI/ML Consultant &amp; Agentic AI Specialist</p>
+    <div class="contact-bar">
+      <span>Seattle, WA</span>
+      <span><a href="mailto:roger.williams@email.com">roger.williams@email.com</a></span>
+      <span>(206) 555-0147</span>
+    </div>
+    <div class="status-badge"><span class="dot"></span>Available for Engagements</div>
+    <div class="cta-row">
+      <a href="#contact" class="btn-primary">Get in Touch</a>
+      <a href="https://linkedin.com/in/rogerwilliams" class="btn-secondary">LinkedIn Profile</a>
+      <a href="https://github.com/rogerwilliams" class="btn-secondary">GitHub</a>
+    </div>
+  </header>
+
+  <!-- INTRO -->
+  <p class="intro-text">
+    I help companies design, build, and ship <strong>production-grade agentic AI systems</strong>.
+    With 8+ years in AI/ML &mdash; including 6.5 years at Amazon Web Services &mdash; I bring deep expertise
+    in autonomous agent architectures, multi-agent orchestration, and LLM-powered reasoning
+    pipelines. I&rsquo;ve built systems that serve millions. Now I can build them for you.
+  </p>
+
+  <!-- BY THE NUMBERS -->
+  <section>
+    <div class="container">
+      <h2>By the Numbers</h2>
+      <div class="metrics-row">
+        <div class="metric-box">
+          <div class="number">8+</div>
+          <div class="label">Years in AI/ML</div>
+        </div>
+        <div class="metric-box">
+          <div class="number">6.5</div>
+          <div class="label">Years at Amazon (AWS)</div>
+        </div>
+        <div class="metric-box">
+          <div class="number">2M+</div>
+          <div class="label">Daily Agent Invocations</div>
+        </div>
+        <div class="metric-box">
+          <div class="number">3</div>
+          <div class="label">Patent Filings</div>
+        </div>
+        <div class="metric-box">
+          <div class="number">40%</div>
+          <div class="label">Ticket Resolution Reduction</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONSULTING SERVICES -->
+  <section id="services" style="background: var(--white);">
+    <div class="container">
+      <h2>What I Do</h2>
+      <p class="section-subtitle">End-to-end consulting for teams building intelligent, autonomous AI systems.</p>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="icon">&#129302;</div>
+          <h3>Agentic AI Architecture</h3>
+          <p>Design and build multi-agent systems with dynamic tool selection, multi-step planning, persistent memory, and robust guardrails. From proof-of-concept to production at scale.</p>
+        </div>
+        <div class="skill-card">
+          <div class="icon">&#128279;</div>
+          <h3>LLM Integration &amp; Orchestration</h3>
+          <p>Integrate large language models into your product stack with RAG pipelines, prompt engineering, fine-tuning strategies, and orchestration frameworks (LangChain, AutoGen, custom).</p>
+        </div>
+        <div class="skill-card">
+          <div class="icon">&#9729;&#65039;</div>
+          <h3>ML Infrastructure &amp; MLOps</h3>
+          <p>Build scalable ML platforms on AWS (SageMaker, Bedrock, EKS) with CI/CD, model monitoring, A/B testing, and cost-optimized serving infrastructure.</p>
+        </div>
+        <div class="skill-card">
+          <div class="icon">&#129504;</div>
+          <h3>Reinforcement Learning &amp; Agent Training</h3>
+          <p>Design RL-based feedback loops for agent self-improvement, reward modeling, and human-in-the-loop training pipelines.</p>
+        </div>
+        <div class="skill-card">
+          <div class="icon">&#128208;</div>
+          <h3>Technical Strategy &amp; Roadmapping</h3>
+          <p>Help leadership teams evaluate build-vs-buy decisions, define AI roadmaps, and prioritize high-impact ML investments aligned with business goals.</p>
+        </div>
+        <div class="skill-card">
+          <div class="icon">&#128101;</div>
+          <h3>Team Mentorship &amp; Enablement</h3>
+          <p>Upskill your engineering team on agentic AI best practices, conduct architecture reviews, and establish coding standards for ML systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="container">
+      <h2>Where I&rsquo;ve Built</h2>
+      <p class="section-subtitle">A track record across top-tier tech companies and research labs.</p>
+      <div class="experience-list">
+        <div class="exp-item">
+          <div class="exp-logo">AWS</div>
+          <div class="exp-details">
+            <h3>Senior AI/ML Engineer</h3>
+            <div class="company">Amazon Web Services</div>
+            <div class="dates">Mar 2020 &ndash; Sep 2026 &middot; 6.5 years</div>
+            <p>Core member of the Agentic AI team. Led multi-agent orchestration platform (2M+ daily invocations), developed LLM tool-use modules, built RL training pipelines, and filed 3 patents. Promoted from Engineer II to Senior in 2023.</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-logo">MSR</div>
+          <div class="exp-details">
+            <h3>ML Engineering Intern</h3>
+            <div class="company">Microsoft Research &ndash; Semantic Machines</div>
+            <div class="dates">May 2019 &ndash; Aug 2019</div>
+            <p>Few-shot learning for NLU. Built prototype dialogue agents with pre-trained language models. Co-authored internal research paper.</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-logo">NV</div>
+          <div class="exp-details">
+            <h3>Data Science Intern</h3>
+            <div class="company">NVIDIA &ndash; Deep Learning Solutions</div>
+            <div class="dates">May 2018 &ndash; Aug 2018</div>
+            <p>GPU performance prediction models and telemetry data pipelines using Spark and Python.</p>
+          </div>
+        </div>
+        <div class="exp-item">
+          <div class="exp-logo">GT</div>
+          <div class="exp-details">
+            <h3>Research Assistant &ndash; NLP Lab</h3>
+            <div class="company">Georgia Institute of Technology</div>
+            <div class="dates">Aug 2017 &ndash; May 2019</div>
+            <p>Attention mechanisms and seq2seq research. Published at EMNLP 2018 Workshop on low-resource machine translation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section id="tech" style="background: var(--white);">
+    <div class="container">
+      <h2>Tech Stack</h2>
+      <p class="section-subtitle">Tools and technologies I work with daily.</p>
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">PyTorch</span>
+        <span class="tech-tag">TensorFlow</span>
+        <span class="tech-tag">LangChain</span>
+        <span class="tech-tag">AutoGen</span>
+        <span class="tech-tag">Hugging Face</span>
+        <span class="tech-tag">AWS SageMaker</span>
+        <span class="tech-tag">AWS Bedrock</span>
+        <span class="tech-tag">AWS Lambda</span>
+        <span class="tech-tag">Kubernetes</span>
+        <span class="tech-tag">Docker</span>
+        <span class="tech-tag">MLflow</span>
+        <span class="tech-tag">Spark</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">Terraform</span>
+        <span class="tech-tag">RAG Pipelines</span>
+        <span class="tech-tag">Multi-Agent Systems</span>
+        <span class="tech-tag">Reinforcement Learning</span>
+        <span class="tech-tag">Prompt Engineering</span>
+        <span class="tech-tag">LLM Fine-Tuning</span>
+        <span class="tech-tag">NLP / NLU</span>
+        <span class="tech-tag">CI/CD</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION & CERTS -->
+  <section id="education">
+    <div class="container">
+      <h2>Education &amp; Credentials</h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <h3>M.S. Computer Science</h3>
+          <div class="school">Georgia Institute of Technology</div>
+          <div class="year">2017 &ndash; 2019 &middot; Machine Learning Specialization</div>
+          <p>GPA: 3.87 &middot; Thesis: &ldquo;Adaptive Planning in Neural Dialogue Agents&rdquo; &middot; TA for CS 7641 Machine Learning</p>
+        </div>
+        <div class="edu-card">
+          <h3>B.S. Computer Science</h3>
+          <div class="school">University of California, Irvine</div>
+          <div class="year">2013 &ndash; 2017 &middot; Minor in Statistics</div>
+          <p>Dean&rsquo;s List (6 semesters) &middot; Undergraduate Research Award 2016</p>
+        </div>
+        <div class="edu-card">
+          <h3>AWS Certified ML &ndash; Specialty</h3>
+          <div class="school">Amazon Web Services</div>
+          <div class="year">2021</div>
+          <p>Validates expertise in building, training, tuning, and deploying ML models on AWS.</p>
+        </div>
+        <div class="edu-card">
+          <h3>AWS Solutions Architect &ndash; Associate</h3>
+          <div class="school">Amazon Web Services</div>
+          <div class="year">2020</div>
+          <p>Cloud architecture design and deployment best practices.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="cta-section">
+    <h2>Let&rsquo;s Build Something</h2>
+    <p>Whether you&rsquo;re starting from scratch or scaling an existing AI system, I&rsquo;d love to hear about your challenge.</p>
+    <a href="mailto:roger.williams@email.com" class="btn-primary">Get in Touch</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Roger Williams. All rights reserved.</p>
+    <p style="margin-top: 6px; font-size: 0.9em; opacity: 0.7;">
+      <a href="https://linkedin.com/in/rogerwilliams">LinkedIn</a> &middot;
+      <a href="https://github.com/rogerwilliams">GitHub</a> &middot;
+      <a href="mailto:roger.williams@email.com">Email</a>
+    </p>
+    <p style="margin-top: 12px; font-style: italic; opacity: 0.5;">This is a fictional profile created for training purposes only.</p>
+  </footer>
+
+</body>
+</html>
